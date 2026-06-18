@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peptides Diffusion</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="molstar-stage" aria-label="Diffusion trajectory molecular stage"></div>
+
+      <main class="overlay" aria-live="polite">
+        <section class="title-block">
+          <p class="kicker">Peptides Diffusion</p>
+        </section>
+
+        <section class="trajectory-panel">
+          <div class="trajectory-row">
+            <div>
+              <span id="trajectory-index" class="trajectory-index">P1 / P6</span>
+              <h1 id="trajectory-name">P1</h1>
+            </div>
+          </div>
+
+          <dl class="meta-list">
+            <div>
+              <dt>Length</dt>
+              <dd id="chain-length">-- aa</dd>
+            </div>
+          </dl>
+
+        </section>
+
+        <nav class="trajectory-controls" aria-label="Trajectory controls">
+          <button id="prev-trajectory" type="button" title="Previous trajectory" aria-label="Previous trajectory">‹</button>
+          <button id="next-trajectory" type="button" title="Next trajectory" aria-label="Next trajectory">›</button>
+        </nav>
+      </main>
+
+      <div id="loading-screen" class="loading-screen">
+        <div>
+          <p>Preparing diffusion trajectories</p>
+          <span>Loading six protein trajectories</span>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Molecule Docking</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="molstar-stage" aria-label="Molecular docking review stage"></div>
+
+      <main class="overlay" aria-live="polite">
+        <section class="title-block">
+          <p class="kicker">Molecule Docking</p>
+        </section>
+
+        <section class="target-block">
+          <dl>
+            <div>
+              <dt>Target</dt>
+              <dd id="target-name">SARS-CoV-2</dd>
+            </div>
+            <div>
+              <dt>Pocket</dt>
+              <dd id="pocket-name">Mpro</dd>
+            </div>
+            <div>
+              <dt>Ligand DataSet</dt>
+              <dd id="dataset-name">COVID Moonshot Dataset</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="metric-block">
+          <div class="ligand-row">
+            <div>
+              <span id="ligand-index" class="ligand-index">Ligand 01 / 01</span>
+              <h1 id="ligand-name">Loading</h1>
+            </div>
+          </div>
+
+          <dl id="metric-list" class="metric-list"></dl>
+        </section>
+
+        <nav class="ligand-controls" aria-label="Ligand controls">
+          <button id="prev-ligand" type="button" title="Previous ligand" aria-label="Previous ligand">‹</button>
+          <button id="next-ligand" type="button" title="Next ligand" aria-label="Next ligand">›</button>
+        </nav>
+      </main>
+
+      <div id="loading-screen" class="loading-screen">
+        <div>
+          <p>Preparing docking review</p>
+          <span>Loading SARS-CoV-2 Mpro and COVID Moonshot ligands</span>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Molecule Dynamic</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="molstar-stage" aria-label="Molecule Dynamic molecular trajectory stage"></div>
+
+      <main class="overlay" aria-live="polite">
+        <section class="title-block">
+          <p class="kicker">Molecule Dynamic</p>
+        </section>
+
+        <section class="trajectory-panel">
+          <div class="trajectory-row">
+            <div>
+              <span id="trajectory-index" class="trajectory-index">Frame -- / --</span>
+              <h1 id="trajectory-name">TYK2: ejm47-ejm31</h1>
+            </div>
+          </div>
+
+          <dl id="metric-list" class="meta-list">
+            <div>
+              <dt>Atoms</dt>
+              <dd>--</dd>
+            </div>
+          </dl>
+        </section>
+
+        <nav class="trajectory-controls" aria-label="Trajectory controls">
+          <button id="prev-frame" type="button" title="Previous frame" aria-label="Previous frame">‹</button>
+          <button id="play-toggle" type="button" title="Pause trajectory" aria-label="Pause trajectory">Ⅱ</button>
+          <button id="next-frame" type="button" title="Next frame" aria-label="Next frame">›</button>
+        </nav>
+      </main>
+
+      <div id="loading-screen" class="loading-screen">
+        <div>
+          <p>Preparing molecular dynamics</p>
+          <span>Loading stripped topology and trajectory</span>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "vite-molstar-sars-cov-2-story",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc && vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-basic-ssl": "^1.2.0",
+    "molstar": "^4.13.0",
+    "sass": "^1.89.2",
+    "typescript": "^5.8.3",
+    "vite": "^6.4.3"
+  }
+}

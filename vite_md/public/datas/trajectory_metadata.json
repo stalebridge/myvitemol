@@ -1,0 +1,79 @@
+{
+  "title": "Molecule Dynamic",
+  "topologyUrl": "/datas/structure_nowater.pdb",
+  "trajectoryUrl": "/datas/trajectory_nowater_stride5.dcd",
+  "sourceTopology": "/mnt/d/cadd/illustrateddemo/vite_md/datas/structure.pdb",
+  "sourceTrajectory": "/mnt/d/cadd/illustrateddemo/vite_md/datas/trajectory.dcd",
+  "selection": "not ((resname HOH WAT SOL TIP3 TIP3P SPC T3P TIP4 TIP4P) or ((resname Na+ Cl- NA CL SOD CLA) or (name Na+ Cl- NA CL)))",
+  "waterResnames": [
+    "HOH",
+    "WAT",
+    "SOL",
+    "TIP3",
+    "TIP3P",
+    "SPC",
+    "T3P",
+    "TIP4",
+    "TIP4P"
+  ],
+  "ionResnames": [
+    "Na+",
+    "Cl-",
+    "NA",
+    "CL",
+    "SOD",
+    "CLA"
+  ],
+  "ionNames": [
+    "Na+",
+    "Cl-",
+    "NA",
+    "CL"
+  ],
+  "ionStrengthMolar": 0.15,
+  "stride": 5,
+  "inputAtomCount": 38172,
+  "atomCount": 4703,
+  "removedAtomCount": 33469,
+  "removedWaterCount": 11135,
+  "removedWaterAtomCount": 33405,
+  "removedIonAtomCount": 64,
+  "inputFrameCount": 5100,
+  "frameCount": 1020,
+  "residueCount": 290,
+  "segmentCount": 2,
+  "segments": [
+    "A",
+    "B"
+  ],
+  "center": {
+    "x": 69.88436317443848,
+    "y": 68.25623893737793,
+    "z": 81.46391296386719
+  },
+  "radius": 54.78893766398988,
+  "firstFrameBounds": {
+    "min": [
+      45.38992691040039,
+      43.61508560180664,
+      49.46886444091797
+    ],
+    "max": [
+      94.37879943847656,
+      92.89739227294922,
+      113.4589614868164
+    ]
+  },
+  "trajectoryBounds": {
+    "min": [
+      38.232666015625,
+      27.88233184814453,
+      46.21302795410156
+    ],
+    "max": [
+      113.76654815673828,
+      108.97903442382812,
+      129.28802490234375
+    ]
+  }
+}

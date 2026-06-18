@@ -1,0 +1,276 @@
+@font-face {
+  font-family: "InterVar";
+  src: local("Inter"), local("Segoe UI");
+}
+
+:root {
+  color: #2d2924;
+  background: #f7f2ea;
+  font-family: InterVar, "Segoe UI", Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.92), rgba(250, 246, 239, 0.82) 38%, rgba(238, 231, 219, 0.6) 100%),
+    linear-gradient(135deg, #fbf7ef 0%, #f5efe5 45%, #ece5d8 100%);
+}
+
+#app {
+  position: relative;
+  isolation: isolate;
+}
+
+#app::before {
+  position: absolute;
+  inset: 9vh 12vw 8vh;
+  z-index: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(204, 194, 176, 0.2), rgba(204, 194, 176, 0) 67%);
+  content: "";
+  pointer-events: none;
+  transform: translateY(28vh) scaleX(0.95);
+}
+
+#molstar-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+#molstar-stage .msp-plugin,
+#molstar-stage .msp-layout,
+#molstar-stage .msp-viewport,
+#molstar-stage .msp-canvas3d {
+  background: transparent !important;
+}
+
+#molstar-stage .msp-plugin .msp-layout-region {
+  background: transparent;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.title-block,
+.target-block,
+.metric-block,
+.ligand-controls {
+  position: absolute;
+}
+
+.title-block {
+  top: clamp(22px, 3vw, 42px);
+  right: clamp(24px, 3.6vw, 56px);
+  max-width: min(560px, 54vw);
+  border: 1px solid rgba(78, 71, 62, 0.12);
+  border-radius: 18px;
+  padding: clamp(14px, 1.6vw, 22px) clamp(18px, 2vw, 28px);
+  background: rgba(255, 253, 248, 0.72);
+  box-shadow: 0 24px 70px rgba(70, 58, 43, 0.11);
+  backdrop-filter: blur(18px);
+}
+
+.kicker {
+  margin: 0;
+  color: rgba(45, 41, 36, 0.92);
+  font-size: clamp(30px, 3vw, 48px);
+  font-weight: 760;
+  line-height: 1.02;
+  letter-spacing: 0;
+  text-align: right;
+}
+
+.target-block {
+  bottom: clamp(24px, 4vw, 60px);
+  left: clamp(24px, 3.6vw, 56px);
+  width: min(330px, 34vw);
+  border: 1px solid rgba(78, 71, 62, 0.12);
+  border-radius: 18px;
+  padding: clamp(16px, 1.7vw, 24px);
+  background: rgba(255, 253, 248, 0.68);
+  box-shadow: 0 22px 64px rgba(70, 58, 43, 0.1);
+  backdrop-filter: blur(18px);
+}
+
+.target-block dl,
+.metric-block dl {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+}
+
+.target-block div,
+.metric-list div {
+  display: grid;
+  gap: 4px;
+}
+
+dt,
+.ligand-index {
+  margin: 0;
+  color: rgba(45, 41, 36, 0.48);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+dd {
+  margin: 0;
+  color: rgba(45, 41, 36, 0.86);
+  font-size: clamp(17px, 1.6vw, 24px);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.metric-block {
+  right: clamp(24px, 3.6vw, 56px);
+  bottom: clamp(24px, 4vw, 58px);
+  width: min(360px, 34vw);
+  z-index: 5;
+  border: 1px solid rgba(78, 71, 62, 0.16);
+  border-radius: 18px;
+  padding: clamp(18px, 1.8vw, 26px);
+  background:
+    linear-gradient(180deg, rgba(255, 254, 250, 0.92), rgba(248, 243, 235, 0.86));
+  box-shadow:
+    0 28px 80px rgba(70, 58, 43, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(18px);
+}
+
+.ligand-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+h1 {
+  margin: 5px 0 0;
+  color: rgba(45, 41, 36, 0.92);
+  font-size: clamp(25px, 2.4vw, 40px);
+  font-weight: 650;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.metric-list {
+  padding-top: 14px;
+  border-top: 1px solid rgba(84, 75, 64, 0.12);
+}
+
+.metric-list div {
+  grid-template-columns: minmax(116px, 1fr) auto;
+  align-items: baseline;
+}
+
+.metric-list dd {
+  justify-self: end;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(17px, 1.5vw, 22px);
+}
+
+.ligand-controls {
+  right: clamp(24px, 3.6vw, 56px);
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: auto;
+  transform: translateY(-50%);
+}
+
+.ligand-controls button {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(78, 71, 62, 0.16);
+  border-radius: 50%;
+  color: rgba(45, 41, 36, 0.64);
+  background: rgba(255, 255, 255, 0.34);
+  box-shadow: 0 12px 28px rgba(70, 58, 43, 0.07);
+  cursor: pointer;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.ligand-controls button:hover {
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.loading-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  color: rgba(45, 41, 36, 0.78);
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.96), rgba(247, 242, 234, 0.9) 50%, rgba(236, 229, 217, 0.92) 100%);
+  transition: opacity 320ms ease, visibility 320ms ease;
+}
+
+.loading-screen.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-screen div {
+  text-align: center;
+}
+
+.loading-screen p {
+  margin: 0;
+  font-size: clamp(20px, 2vw, 30px);
+  font-weight: 650;
+}
+
+.loading-screen span {
+  display: block;
+  margin-top: 10px;
+  color: rgba(45, 41, 36, 0.5);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.loading-screen.is-error {
+  color: #762d2d;
+}
+
+@media (max-width: 760px) {
+  .target-block {
+    width: min(280px, 42vw);
+  }
+
+  .metric-block {
+    width: min(330px, 46vw);
+  }
+
+  .metric-list div {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-list dd {
+    justify-self: start;
+  }
+}

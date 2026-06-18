@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SARS-COV-2 Virion Story</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="molstar-stage" aria-label="SARS-COV-2 virion molecular story stage"></div>
+
+      <main class="overlay" aria-live="polite">
+        <section class="story-header">
+          <h1 id="scene-title">SARS-COV-2 Virion</h1>
+        </section>
+
+        <section class="virus-panel" aria-label="Virus and layer legend">
+          <p class="panel-label">Virus</p>
+          <h2>SARS-COV-2 Virion</h2>
+          <ul class="legend-list">
+            <li><span class="legend-swatch legend-spike"></span>S-protein</li>
+            <li><span class="legend-swatch legend-m"></span>M-protein</li>
+            <li><span class="legend-swatch legend-e"></span>E-protein</li>
+            <li><span class="legend-swatch legend-lipid"></span>Lipid bilayer</li>
+          </ul>
+        </section>
+
+        <nav class="scene-controls" aria-label="Scene controls">
+          <button id="prev-scene" type="button" class="round-button" title="Previous scene" aria-label="Previous scene">‹</button>
+          <div id="scene-dots" class="scene-dots"></div>
+          <button id="next-scene" type="button" class="round-button" title="Next scene" aria-label="Next scene">›</button>
+          <button id="pause-scene" type="button" class="round-button pause-button" title="Pause story" aria-label="Pause story">Ⅱ</button>
+        </nav>
+
+      </main>
+
+      <div id="loading-screen" class="loading-screen">
+        <div>
+          <p>Preparing virion story</p>
+          <span>Loading SARS-COV-2_VIRION.cif</span>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
